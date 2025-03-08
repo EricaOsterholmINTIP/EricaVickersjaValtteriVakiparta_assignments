@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Form Assignment</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .error { color: red; }
+    </style>
+</head>
+<body>
+    <h2>HTML5 Form Assignment</h2>
+    <form id="userForm">
+        <label>Full Name: <input type="text" id="fullName" name="fullName" required autofocus placeholder="Enter full name" size="60" maxlength="80"></label><br><br>
+        
+        <label>Password: <input type="password" id="password" name="password" required pattern="[a-zA-Z0-9_,.-:;?!]{8,20}"></label><br>
+        <label>Confirm Password: <input type="password" id="confirmPassword" required></label><br>
+        
+        <fieldset>
+            <legend>Gender:</legend>
+            <label><input type="radio" name="gender" value="male" required> Male</label>
+            <label><input type="radio" name="gender" value="female"> Female</label>
+            <label><input type="radio" name="gender" value="other"> Other</label>
+        </fieldset><br>
+        
+        <fieldset>
+            <legend>Hobbies:</legend>
+            <label><input type="checkbox" name="hobbies" value="games"> Games</label>
+            <label><input type="checkbox" name="hobbies" value="music"> Music</label>
+            <label><input type="checkbox" name="hobbies" value="sports"> Sports</label>
+            <label><input type="checkbox" name="hobbies" value="tv"> TV</label>
+        </fieldset><br>
+        
+        <label>Birth Date: <input type="date" id="birthDate"></label><br><br>
+        
+        <label>Height: <input type="range" id="heightRange" min="40" max="300" value="170" oninput="heightNumber.value = heightRange.value"> 
+            <input type="number" id="heightNumber" min="40" max="300" value="170" oninput="heightRange.value = heightNumber.value"></label><br><br>
+        
+        <label>Favorite Color: <input type="color" id="favColor"></label><br><br>
+        
+        <label>Home Country: 
+            <select id="homeCountry">
+                <option value="Finland" selected>Finland</option>
+                <option value="Sweden">Sweden</option>
+                <option value="Norway">Norway</option>
+                <option value="Denmark">Denmark</option>
+                <option value="Iceland">Iceland</option>
+                <option value="Estonia">Estonia</option>
+                <option value="Latvia">Latvia</option>
+                <option value="Lithuania">Lithuania</option>
+                <option value="Russia">Russia</option>
+            </select>
+        </label><br><br>
+        
+        <label>Profession: <input list="professions" id="profession"></label>
+        <datalist id="professions">
+            <option value="Teacher">
+            <option value="Nurse">
+            <option value="Plumber">
+            <option value="Bureaucrat">
+        </datalist><br><br>
+        
+        <label>Message:<br> <textarea id="message" rows="6" cols="60" required placeholder="Enter your message" maxlength="1000"></textarea></label><br><br>
+        
+        <button type="button" onclick="validateForm()">Send</button>
+    </form>
+    
+    <h3>Output:</h3>
+    <pre id="output"></pre>
+    
+    <script>
+        function validateForm() {
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirmPassword").value;
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+            
+            let fullName = document.getElementById("fullName").value;
+            let gender = document.querySelector('input[name="gender"]:checked')?.value;
+            let hobbies = Array.from(document.querySelectorAll('input[name="hobbies"]:checked')).map(h => h.value).join(", ");
+            let birthDate = document.getElementById("birthDate").value;
+            let height = document.getElementById("heightNumber").value + " cm";
+            let favColor = document.getElementById("favColor").value;
+            let homeCountry = document.getElementById("homeCountry").value;
+            let profession = document.getElementById("profession").value;
+            let message = document.getElementById("message").value;
+            
+            let output = `
+Full Name: ${fullName}
+Password: ********
+Gender: ${gender}
+Hobbies: ${hobbies || "None"}
+Birth Date: ${birthDate}
+Height: ${height}
+Favorite Color: ${favColor}
+Home Country: ${homeCountry}
+Profession: ${profession}
+Message: ${message}`;
+            
+            document.getElementById("output").textContent = output;
+        }
+    </script>
+</body>
+</html>

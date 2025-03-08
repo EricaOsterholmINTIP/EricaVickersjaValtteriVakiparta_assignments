@@ -1,0 +1,52 @@
+[
+    {
+        "question": "What is the capital of Finland?",
+        "choices": ["Helsinki", "Stockholm", "Oslo", "Copenhagen"],
+        "correct": "Helsinki"
+    },
+    {
+        "question": "Which language is primarily spoken in Brazil?",
+        "choices": ["Spanish", "Portuguese", "French", "English"],
+        "correct": "Portuguese"
+    },
+    {
+        "question": "Which planet is known as the Red Planet?",
+        "choices": ["Earth", "Mars", "Jupiter", "Venus"],
+        "correct": "Mars"
+    },
+    {
+        "question": "What is the largest ocean on Earth?",
+        "choices": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+        "correct": "Pacific Ocean"
+    },
+    {
+        "question": "Who wrote 'To Kill a Mockingbird'?",
+        "choices": ["Harper Lee", "J.K. Rowling", "Ernest Hemingway", "F. Scott Fitzgerald"],
+        "correct": "Harper Lee"
+    },
+    {
+        "question": "What is the powerhouse of the cell?",
+        "choices": ["Nucleus", "Ribosome", "Mitochondrion", "Golgi Apparatus"],
+        "correct": "Mitochondrion"
+    },
+    {
+        "question": "Which element has the chemical symbol 'O'?",
+        "choices": ["Oxygen", "Gold", "Osmium", "Oganesson"],
+        "correct": "Oxygen"
+    },
+    {
+        "question": "What year did World War II end?",
+        "choices": ["1942", "1945", "1950", "1939"],
+        "correct": "1945"
+    },
+    {
+        "question": "Which programming language is known for its use in web development?",
+        "choices": ["Python", "JavaScript", "C++", "Swift"],
+        "correct": "JavaScript"
+    },
+    {
+        "question": "Who painted the Mona Lisa?",
+        "choices": ["Vincent van Gogh", "Pablo Picasso", "Leonardo da Vinci", "Claude Monet"],
+        "correct": "Leonardo da Vinci"
+    }
+]
