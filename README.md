@@ -1,0 +1,2 @@
+# EricaVickersjaValtteriVakiparta_assignments
+tehtävät
